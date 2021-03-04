@@ -100,12 +100,15 @@ body, html{
 
 .nav {
   @include transition-ease;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   overflow-x: hidden;
-  height: 100vh;
+  height: 100%;
+  overflow-y: hidden;
   background: $theme_bg;
   transform: translateY(-200vh);
   opacity: 1;
@@ -203,20 +206,29 @@ a{
 }
 
 .modal-container{
+  position: fixed;
+  background-color:rgba($theme_primary, 0.5);
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   padding:2.5rem 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba($theme_primary, 0.5);
-}
+  }
+
 
 .recipe-modal{
+  position: absolute;
+  overflow-y: scroll;
   width: 95%;
-  height: 90%;
+  height: 100%;
   margin:0 auto;
   padding-bottom: 1.5rem;
   background-color: $theme_bg;
   position: relative;
- // top: 2.5rem;
   #{&}__img-div{
     position: relative;
     width: 100%;
@@ -252,7 +264,7 @@ a{
     line-height: 1.2;
   }
   #{&}__list{
-    width: 85%;
+    width: 80%;
     margin: 1.5rem auto;
     h3{
       margin-bottom: 0.5rem;
@@ -261,17 +273,7 @@ a{
     li{
       margin-bottom: 0.5rem;
     }
-    
-    &__ul{
-      h3{
-        margin-bottom: 0.5rem;
-        font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-      list-style-type: none;
-      width: 90%;
-      margin: 1.5rem auto;
-    }
-  }
+   }
 }
 
 

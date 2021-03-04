@@ -8,7 +8,8 @@ const RecipeGrid = ({recipes}) => {
 
   const recip = {
     title: 'Tempor aliquip exercitation commodo id non.',
-    image: '/img/food-6.jpg',
+    image:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=700%2C636',
     summary:
       'Reprehenderit consectetur et mollit magna enim ut anim. Anim fugiat ullamco ipsum non sit quis proident. Aliqua in sint est duis et culpa fugiat reprehenderit voluptate. Eiusmod laboris ullamco consectetur tempor in consectetur incididunt dolore incididunt aliqua occaecat. Commodo voluptate veniam proident magna et ipsum cillum.',
     diet: ['diet 1', 'diet 2', 'diet 3'],

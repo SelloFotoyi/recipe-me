@@ -222,12 +222,15 @@ body, html {
 
 .nav {
   transition: all 0.5s ease-in-out;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   overflow-x: hidden;
-  height: 100vh;
+  height: 100%;
+  overflow-y: hidden;
   background: white;
   transform: translateY(-200vh);
   opacity: 1;
@@ -334,15 +337,24 @@ a {
 }
 
 .modal-container {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   padding: 2.5rem 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .recipe-modal {
+  position: absolute;
+  overflow-y: scroll;
   width: 95%;
-  height: 90%;
+  height: 100%;
   margin: 0 auto;
   padding-bottom: 1.5rem;
   background-color: white;
@@ -390,7 +402,7 @@ a {
 }
 
 .recipe-modal .recipe-modal__list {
-  width: 85%;
+  width: 80%;
   margin: 1.5rem auto;
 }
 
@@ -401,17 +413,6 @@ a {
 
 .recipe-modal .recipe-modal__list li {
   margin-bottom: 0.5rem;
-}
-
-.recipe-modal .recipe-modal__list__ul {
-  list-style-type: none;
-  width: 90%;
-  margin: 1.5rem auto;
-}
-
-.recipe-modal .recipe-modal__list__ul h3 {
-  margin-bottom: 0.5rem;
-  font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .footer {
