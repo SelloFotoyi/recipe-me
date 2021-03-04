@@ -1,46 +1,51 @@
 import React, {useState} from 'react';
+import SearchForm from './SearchForm';
 
-const Nav = ({mobileMenuOpen, setMobileMenuOpen}) => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+const Nav = ({mobileMenuOpen, setMobileMenuOpen, navSearch, setNavSearch}) => {
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+    if (navSearch) {
+      setNavSearch(!navSearch);
+    }
+  };
 
   return (
     <>
       <div className='mobile-nav-bar home'>
-        <div class='mobile-nav-bar__logo'>RM</div>
-        <div
-          class='menu-btn '
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
+        <div className='mobile-nav-bar__logo'>RM</div>
+        {navSearch && <SearchForm navSearch={navSearch} />}
+
+        <div className='menu-btn ' onClick={toggleMobileMenu}>
           <span
-            class={`menu-btn__burger ${mobileMenuOpen ? 'open' : ''}`}
+            className={`menu-btn__burger ${mobileMenuOpen ? 'open' : ''}`}
           ></span>
         </div>
       </div>
 
-      <nav class={`nav ${mobileMenuOpen ? 'open' : ''}`}>
-        <ul class='nav__menu'>
-          <li class='nav__menu__item'>
-            <a href='#' class='nav__menu__item__link logo'>
+      <nav className={`nav ${mobileMenuOpen ? 'open' : ''}`}>
+        <ul className='nav__menu'>
+          <li className='nav__menu__item'>
+            <a href='#' className='nav__menu__item__link logo'>
               RM
             </a>
           </li>
-          <li class='nav__menu__item'>
-            <a href='./index.html' class='nav__menu__item__link active'>
+          <li className='nav__menu__item'>
+            <a href='./index.html' className='nav__menu__item__link active'>
               Home
             </a>
           </li>
-          <li class='nav__menu__item'>
-            <a href='./about.html' class='nav__menu__item__link'>
+          <li className='nav__menu__item'>
+            <a href='./about.html' className='nav__menu__item__link'>
               Menu
             </a>
           </li>
-          <li class='nav__menu__item'>
-            <a href='./projects.html' class='nav__menu__item__link'>
+          <li className='nav__menu__item'>
+            <a href='./projects.html' className='nav__menu__item__link'>
               Search+
             </a>
           </li>
-          <li class='nav__menu__item'>
-            <a href='./contact.html' class='nav__menu__item__link'>
+          <li className='nav__menu__item'>
+            <a href='./contact.html' className='nav__menu__item__link'>
               Join
             </a>
           </li>

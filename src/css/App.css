@@ -1,9 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-form, .nav-form {
+  width: 85%;
+  height: 2.5rem;
+  margin: 1.5rem auto 0 auto;
+  border-radius: 0.5rem;
+  padding: 0 3%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-form input, .nav-form input {
+  font-size: 1.25rem;
+  flex-basis: 95%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.main-form input:hover, .nav-form input:hover {
+  outline: none;
+  border: none;
+}
+
+.main-form label, .nav-form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 5%;
+  flex-grow: 0;
+  height: 100%;
+}
+
+.main-form label svg, .nav-form label svg {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.main-form label svg:hover, .nav-form label svg:hover {
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
 }
 
 .home {
@@ -27,50 +73,6 @@
 .home .home__title {
   font-size: 2.5rem;
   font-family: Courgette, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.home-form {
-  width: 85%;
-  height: 2.5rem;
-  margin: 1.5rem auto 0 auto;
-  border-radius: 1rem;
-  padding: 0 3%;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.home-form .home-form__input {
-  font-size: 1.25rem;
-  flex-basis: 95%;
-  height: 100%;
-  border: none;
-  outline: none;
-}
-
-.home-form .home-form__input:hover {
-  outline: none;
-  border: none;
-}
-
-.home-form label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-basis: 5%;
-  flex-grow: 0;
-  height: 100%;
-}
-
-.home-form label svg {
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-.home-form label svg:hover {
-  transition: all 0.5s ease-in-out;
-  opacity: 1;
 }
 
 .home-main {
@@ -125,6 +127,15 @@ body, html {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.nav-form {
+  align-self: center;
+  margin-top: 0;
+  height: 2rem;
+  border: 1px solid gray;
+  flex-basis: 70%;
+  width: auto;
 }
 
 .mobile-nav-bar {
@@ -257,6 +268,65 @@ body, html {
 .nav .nav__menu__item__link.logo {
   font-weight: bold;
   display: none;
+}
+
+.search-page__title {
+  padding-top: 5rem;
+  width: 100%;
+  text-align: center;
+  font-family: Courgette, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.recipe-grid {
+  width: 90%;
+  margin: 2.5rem auto 5rem auto;
+  overflow-x: hidden;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.recipe-card {
+  background-color: white;
+  position: relative;
+  width: 100%;
+  height: 12.5rem;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.recipe-card:hover {
+  transition: all 0.5s ease-in-out;
+  opacity: 0.9;
+}
+
+.recipe-card .recipe-card__time {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 5rem;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 1.5rem;
+}
+
+.recipe-card .recipe-card__img-div {
+  width: 100%;
+  height: 65%;
+}
+
+.recipe-card .recipe-card__img-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recipe-card .recipe-card__title {
+  font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
 }
 
 a {

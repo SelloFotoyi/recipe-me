@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 $theme_primary: #000;
 $theme_secondary: #f1f10c;
 $theme_bg: white;
@@ -19,13 +21,13 @@ $theme_bg: white;
     width: 85%;
     height: 2.5rem;
     margin: 1.5rem auto 0 auto;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 0 3%;
     background-color: $theme_bg;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    #{&}__input{
+    input{
         font-size: 1.25rem;
         flex-basis: 95%;
         height: 100%;
