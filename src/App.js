@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Nav from './components/Nav';
 import SearchPage from './components/SearchPage';
 import Footer from './components/Footer';
+import RecipeModal from './components/RecipeModal';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -45,25 +46,28 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className='App'>
-        <Nav
-          mobileMenuOpen={mobileMenuOpen}
-          setMobileMenuOpen={setMobileMenuOpen}
-          navSearch={navSearch}
-          setNavSearch={setNavSearch}
-        />
-        <Route
-          path='/'
-          exact
-          render={(props) => <>{!mobileMenuOpen && <Home />}</>}
-        />
+    // <Router>
+    //   <div className='App'>
+    //     <Nav
+    //       mobileMenuOpen={mobileMenuOpen}
+    //       setMobileMenuOpen={setMobileMenuOpen}
+    //       navSearch={navSearch}
+    //       setNavSearch={setNavSearch}
+    //     />
+    //     <Route
+    //       path='/'
+    //       exact
+    //       render={(props) => <>{!mobileMenuOpen && <Home />}</>}
+    //     />
 
-        <Route path='/search-page'>
-          <SearchPage recipes={recipes} />
-        </Route>
-      </div>
-    </Router>
+    //     <Route path='/search-page'>
+    //       <SearchPage recipes={recipes} />
+    //     </Route>
+    //   </div>
+    // </Router>
+    <div>
+      <RecipeModal recipe={recipe} />
+    </div>
   );
 }
 
