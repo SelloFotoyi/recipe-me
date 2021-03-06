@@ -1,8 +1,57 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import RecipeModal from './RecipeModal';
 
 const RecipeCard = ({recipe}) => {
+  const axios = require('axios');
+
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [toModal, setToModal] = useState(false);
+  const [detailedRecipe, setDetailedRecipe] = useState({});
+
+  useEffect(() => {
+    if (isModalOpen) {
+      axios
+        .get(
+          `https://api.spoonacular.com/recipes/${recipe.id}/information?includeNutrition=true`,
+          {
+            params: {
+              apiKey: '389912dfeb104476b76c3bcc567edda3',
+            },
+          }
+        )
+
+        .then((info) => {
+          let ingredients = [];
+          if (info.data.extendedIngredients.length > 0) {
+            info.data.extendedIngredients.map((ingredient) => {
+              ingredients.push(ingredient.originalString);
+            });
+          }
+
+          let instructions = [];
+          if (info.data.analyzedInstructions[0].steps.length > 0) {
+            info.data.analyzedInstructions[0].steps.map((step) => {
+              instructions.push(step.step);
+            });
+          }
+
+          setDetailedRecipe({
+            id: recipe.id,
+            image: info.data.image,
+            title: info.data.title,
+            summary: `${info.data.summary}`,
+            diets: info.data.diets,
+            servings: info.data.servings,
+            calories: info.data.nutrition.nutrients[0].amount,
+            readyInMinutes: info.data.readyInMinutes,
+            ingredients: ingredients,
+            instructions: instructions,
+          });
+          setToModal(true);
+        });
+    }
+  }, [isModalOpen]);
+
   return (
     <>
       <div
@@ -14,14 +63,14 @@ const RecipeCard = ({recipe}) => {
         <div className='recipe-card__img-div'>
           <img src={recipe.image} alt='recipe-img' />
         </div>
-        <div className='recipe-card__time'> {`${recipe.readyIn} MIN`}</div>
         <h4 className='recipe-card__title'>{recipe.title}</h4>
       </div>
-      {isModalOpen && (
+      {isModalOpen && toModal && (
         <RecipeModal
-          recipe={recipe}
+          recipe={detailedRecipe}
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
+          setToModal={setToModal}
         />
       )}
     </>
