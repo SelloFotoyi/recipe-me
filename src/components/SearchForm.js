@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 
-const SearchForm = ({navSearch}) => {
+const SearchForm = ({navSearch, setQuery}) => {
   const [formQuery, setFormQuery] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (formQuery) {
+      setQuery(formQuery);
+      setFormQuery('');
+    }
   };
 
   return (

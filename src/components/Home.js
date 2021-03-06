@@ -1,16 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Footer from './Footer';
 import SearchForm from './SearchForm';
 
-const Home = ({setQuery}) => {
-  const [search, setSearch] = useState('');
-
+const Home = ({setQuery, navSearch}) => {
   return (
     <div className='home'>
       <section className='home-search'>
         <h1 className='home__title'>Recipe Me</h1>
-        <SearchForm />
+        <SearchForm navSearch={navSearch} setQuery={setQuery} />
         <p className='suggestor'>e.g, pasta, chicken, etc...</p>
       </section>
       <main className='home-main'>

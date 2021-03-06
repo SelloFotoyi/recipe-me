@@ -36,7 +36,7 @@ body, html{
    font-family: Courgette, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      position: absolute;
     left: 1rem;
- 
+    color: $theme_primary;
     font-size: 1.25rem;
     font-weight: bold;
     opacity: 0.7;
@@ -133,12 +133,15 @@ body, html{
       z-index: 1;
       &__link {
         color: rgba($theme_primary, 0.5);
+         cursor: pointer;
         &.active {
           border-bottom: 5px solid $theme_secondary;
         }
         &.logo {
           font-weight: bold;
           display: none;
+          cursor: pointer;
+          color: $theme_primary;
         }
       }
     }
@@ -276,44 +279,119 @@ a{
    }
 }
 
+.search-plus{
+  width: 100%;
+  height: 100%;
+  padding-top: 5rem;
+  overflow-x: hidden;
+}
+.search-plus__pop-up{
+  width: 80%;
+  height: 100%;
+  margin: 1rem auto;
+  padding-top: 2rem;
+  background-color: $theme_bg;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  #{&}__input{
+    width: 100%;
+    height: 2rem;
+    padding: 0.5rem;
+    margin: 0 auto;
+    outline: none;
+    border: 1px solid darken($theme_secondary, 15%);
+    border-radius: 1rem;
+    &:focus{
+      outline: none;
+      border: 1px solid darken($theme_secondary, 15%);
+    }
+  }
+}
+.btn{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto;
+  background-color: $theme_bg;
+  color: $theme_primary;
+  border: none;
+  border: 1px solid darken($theme_secondary, 15%);
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  &:hover{
+    @include transition-ease;
+    outline: none ;
+    background-color:darken($theme_secondary, 15%);
+    color: $theme_bg;
+    font-weight: bold;
+  }
+}
+
+.ingredients-lister{
+  width: 95%;
+  height: 9rem;
+  overflow-y: auto;
+  margin: 1.5rem auto;
+  border: 1px solid darken($theme_secondary, 15%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  list-style-type: none;
+  li{
+    color: $theme_primary;
+    border: 1px solid darken($theme_secondary, 15%);
+    margin: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+
+  }
+
+}
 
 .footer{
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 15rem;
   border-top: 1px solid $theme_primary;
   background-color: $theme_bg;
   padding-top: 2rem;
-  #{&}-grid{
+  #{&}-flex{
     width: 100%;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    display: flex;
+    flex-direction: column;
+   
     &__item{
       display: flex;
-      justify-content: center;
       ul{
-       width: 50%;
+       width: 90%;
+       margin: 0.5rem auto;
+       text-align: center;
         display: flex;
-        flex-direction: column;
         text-align: left;
         list-style-type: none;
         span{
+        flex-basis: 20%;
         margin-bottom: 0.5rem;
         font-weight: bold;
-
         }
         li{
+          margin: 0 0.5rem;
           line-height: 1.75;
         }
       }
       &.socials{
-        width: 80%;
+        width: 50%;
         height: 5rem;
         margin: 0 auto;
-        grid-column: span 2;
         display: flex;
-        flex-direction: column;
         align-items: center;
         span{
            margin-bottom: 0.5rem;

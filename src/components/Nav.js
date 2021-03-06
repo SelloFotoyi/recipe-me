@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import SearchForm from './SearchForm';
+import {Link} from 'react-router-dom';
 
 const Nav = ({mobileMenuOpen, setMobileMenuOpen, navSearch, setNavSearch}) => {
   const toggleMobileMenu = () => {
@@ -12,7 +13,9 @@ const Nav = ({mobileMenuOpen, setMobileMenuOpen, navSearch, setNavSearch}) => {
   return (
     <>
       <div className='mobile-nav-bar home'>
-        <div className='mobile-nav-bar__logo'>RM</div>
+        <Link to='/' className='mobile-nav-bar__logo'>
+          RM
+        </Link>
         {navSearch && <SearchForm navSearch={navSearch} />}
 
         <div className='menu-btn ' onClick={toggleMobileMenu}>
@@ -25,29 +28,29 @@ const Nav = ({mobileMenuOpen, setMobileMenuOpen, navSearch, setNavSearch}) => {
       <nav className={`nav ${mobileMenuOpen ? 'open' : ''}`}>
         <ul className='nav__menu'>
           <li className='nav__menu__item'>
-            <a href='#' className='nav__menu__item__link logo'>
+            <Link to='/' className='nav__menu__item__link logo'>
               RM
-            </a>
+            </Link>
           </li>
           <li className='nav__menu__item'>
-            <a href='./index.html' className='nav__menu__item__link active'>
+            <Link to='/' className='nav__menu__item__link active'>
               Home
-            </a>
+            </Link>
           </li>
           <li className='nav__menu__item'>
-            <a href='./about.html' className='nav__menu__item__link'>
+            <Link to='/menu' className='nav__menu__item__link'>
               Menu
-            </a>
+            </Link>
           </li>
           <li className='nav__menu__item'>
-            <a href='./projects.html' className='nav__menu__item__link'>
+            <Link to='/search-plus' className='nav__menu__item__link'>
               Search+
-            </a>
+            </Link>
           </li>
           <li className='nav__menu__item'>
-            <a href='./contact.html' className='nav__menu__item__link'>
+            <Link to='/join' className='nav__menu__item__link'>
               Join
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
