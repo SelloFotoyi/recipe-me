@@ -11,24 +11,23 @@ import {
 const Footer = () => {
   return (
     <footer className='footer'>
-      <div className='footer-grid'>
-        <div className='footer-grid__item'>
+      <div className='footer-flex'>
+        <div className='footer-flex__item'>
           <ul>
             <span>Explore</span>
             <li>Unit converter</li>
             <li>Food Jokes</li>
+          </ul>
+        </div>
+        <div className='footer-flex__item'>
+          <ul>
+            <span>Info</span>
+            <li>Author</li>
+            <li>Github</li>
             <li>A.P.I</li>
           </ul>
         </div>
-        <div className='footer-grid__item'>
-          <ul>
-            <span>Info</span>
-            <li>Site's author</li>
-            <li>Github</li>
-          </ul>
-        </div>
-        <div className='footer-grid__item socials'>
-          <span>Socials</span>
+        <div className='footer-flex__item socials'>
           <ul>
             <li className='footer-icon'>
               <FontAwesomeIcon icon={faLinkedinIn} className='footer-icon' />
