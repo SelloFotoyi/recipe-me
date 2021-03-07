@@ -8,6 +8,7 @@ import SearchPage from './components/SearchPage';
 import Footer from './components/Footer';
 import SearchPlus from './components/SearchPlus';
 import Menu from './components/Menu';
+import Explore from './components/Explore';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -59,10 +60,20 @@ function App() {
       <Route path='/search-page'>
         <SearchPage recipes={recipes} />
       </Route>
+
       <Route path='/search-plus'>
         <SearchPlus recipes={recipes} setRecipes={setRecipes} />
       </Route>
+
       <Route path='/menu' component={Menu} />
+
+      <Route path='/trivia'>
+        <Explore query='trivia' />
+      </Route>
+
+      <Route path='/jokes'>
+        <Explore query='jokes' />
+      </Route>
     </div>
   );
 }
