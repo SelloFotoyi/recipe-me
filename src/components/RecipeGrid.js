@@ -1,16 +1,14 @@
 import React from 'react';
 import RecipeCard from './RecipeCard';
 import {Link} from 'react-router-dom';
+import {v4 as uuidv4} from 'uuid';
 
 const RecipeGrid = ({recipes}) => {
   return (
     <div className='recipe-grid'>
       {recipes &&
         recipes.map((recipe) => (
-          <div
-            className='recipe-grid-item'
-            key={Math.floor(Math.random() * 100000000)}
-          >
+          <div className='recipe-grid-item' key={uuidv4()}>
             <RecipeCard recipe={recipe} />
           </div>
         ))}

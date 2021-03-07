@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {Route, useHistory} from 'react-router-dom';
+import axios from 'axios';
 import './css/App.css';
 import Home from './components/Home';
 import Nav from './components/Nav';
 import SearchPage from './components/SearchPage';
 import Footer from './components/Footer';
-import RecipeModal from './components/RecipeModal';
-import axios from 'axios';
 import SearchPlus from './components/SearchPlus';
+import Menu from './components/Menu';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -15,12 +15,6 @@ function App() {
   const [navSearch, setNavSearch] = useState(false);
   const [recipes, setRecipes] = useState([]);
   let history = useHistory();
-
-  // useEffect(() => {
-  //   recipes.map((recipe) => {
-  //     console.log(recipe);
-  //   });
-  // }, [recipes]);
 
   useEffect(() => {
     if (query) {
@@ -62,13 +56,13 @@ function App() {
           </>
         )}
       />
-
       <Route path='/search-page'>
         <SearchPage recipes={recipes} />
       </Route>
       <Route path='/search-plus'>
         <SearchPlus recipes={recipes} setRecipes={setRecipes} />
       </Route>
+      <Route path='/menu' component={Menu} />
     </div>
   );
 }

@@ -15,7 +15,7 @@ const Footer = () => {
         <div className='footer-flex__item'>
           <ul>
             <span>Explore</span>
-            <li>Unit converter</li>
+            <li>Food Trivia</li>
             <li>Food Jokes</li>
           </ul>
         </div>
