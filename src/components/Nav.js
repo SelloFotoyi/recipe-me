@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import SearchForm from './SearchForm';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 const Nav = ({mobileMenuOpen, setMobileMenuOpen, navSearch, setNavSearch}) => {
+  const location = useLocation();
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
     if (navSearch) {
@@ -27,29 +28,44 @@ const Nav = ({mobileMenuOpen, setMobileMenuOpen, navSearch, setNavSearch}) => {
 
       <nav className={`nav ${mobileMenuOpen ? 'open' : ''}`}>
         <ul className='nav__menu'>
-          <li className='nav__menu__item'>
+          <li className={`nav__menu__item`} onClick={toggleMobileMenu}>
             <Link to='/' className='nav__menu__item__link logo'>
               RM
             </Link>
           </li>
-          <li className='nav__menu__item'>
-            <Link to='/' className='nav__menu__item__link active'>
+          <li className={`nav__menu__item `} onClick={toggleMobileMenu}>
+            <Link
+              to='/'
+              className={`nav__menu__item__link ${
+                location.pathname === '/' ? 'active' : ''
+              }`}
+            >
               Home
             </Link>
           </li>
-          <li className='nav__menu__item'>
-            <Link to='/menu' className='nav__menu__item__link'>
+          <li className='nav__menu__item' onClick={toggleMobileMenu}>
+            <Link
+              to='/menu'
+              className={`nav__menu__item__link ${
+                location.pathname === '/menu' ? 'active' : ''
+              }`}
+            >
               Menu
             </Link>
           </li>
-          <li className='nav__menu__item'>
-            <Link to='/search-plus' className='nav__menu__item__link'>
+          <li
+            className={`nav__menu__item ${
+              location.pathname === '/search-plus' ? 'active' : ''
+            }`}
+            onClick={toggleMobileMenu}
+          >
+            <Link
+              to='/search-plus'
+              className={`nav__menu__item__link ${
+                location.pathname === '/search-plus' ? 'active' : ''
+              }`}
+            >
               Search+
-            </Link>
-          </li>
-          <li className='nav__menu__item'>
-            <Link to='/join' className='nav__menu__item__link'>
-              Join
             </Link>
           </li>
         </ul>
