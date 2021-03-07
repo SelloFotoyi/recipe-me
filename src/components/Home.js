@@ -1,9 +1,19 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Footer from './Footer';
 import SearchForm from './SearchForm';
 
-const Home = ({setQuery, navSearch}) => {
+const Home = ({setQuery, navSearch, setNavSearch}) => {
+  window.addEventListener('scroll', () => {
+    let barHeight = window.scrollY;
+    let windowHeight = window.innerHeight;
+    let halfWindowHeight = Math.ceil(windowHeight / 2);
+    if (barHeight >= windowHeight) {
+      setNavSearch(true);
+    } else if (barHeight <= windowHeight) {
+      setNavSearch(false);
+    }
+  });
+
   return (
     <div className='home'>
       <section className='home-search'>

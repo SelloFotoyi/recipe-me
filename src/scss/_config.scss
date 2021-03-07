@@ -19,6 +19,7 @@ $theme_bg-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 %search-form-template{
+    @include transition-ease;
     width: 85%;
     height: 2.5rem;
     margin: 1.5rem auto 0 auto;

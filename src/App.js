@@ -52,7 +52,11 @@ function App() {
         render={(props) => (
           <>
             {!mobileMenuOpen && (
-              <Home navSearch={navSearch} setQuery={setQuery} />
+              <Home
+                navSearch={navSearch}
+                setNavSearch={setNavSearch}
+                setQuery={setQuery}
+              />
             )}
           </>
         )}
