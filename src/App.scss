@@ -2,7 +2,7 @@
 
 body, html{
   width: 100%;
-  height: 100%;
+  height: 10%;
   background-image: $theme_bg-gradient;
   font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -45,8 +45,8 @@ a{
     width: 100%;
     text-align: center;
     position: fixed;
-    //top: 26%;
-    top: 20%;
+    top: 26%;
+    //top: 20%;
     padding-bottom: 1rem;
     padding-top: 1rem;
     z-index: 3;

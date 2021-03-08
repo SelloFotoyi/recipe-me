@@ -6,11 +6,15 @@
   @extend %search-form-template;
   align-self: center;
   margin-top: 0;
-  height: 2rem;
-  border: 2px solid lighten($theme_primary, 50%);
-  flex-basis: 70%;
-  width: auto;
-
+  height: 2rem;  
+  width: 60%;
+  input{
+      width: 50%;
+      font-size: 1rem;
+  }
+  label{
+      flex-basis: 10%;
+  }
 }
 
 .mobile-nav-bar {

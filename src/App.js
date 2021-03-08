@@ -46,6 +46,7 @@ function App() {
         })
         .catch((error) => {
           setError(error.message);
+          setIsLoading(false);
           history.push('./error');
         });
     }

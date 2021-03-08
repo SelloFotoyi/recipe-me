@@ -62,6 +62,7 @@ const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
           let ingredientsResults = res.data;
           if (ingredientsResults.length == 0) {
             setError('');
+            setIsLoading(false);
             history.push('/error');
           } else {
             setRecipes(ingredientsResults);
@@ -71,6 +72,8 @@ const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
         })
         .catch((error) => {
           setError(error.message);
+          console.log(error.message);
+          setIsLoading(false);
           history.push('./error');
         });
       setIngredients([]);
