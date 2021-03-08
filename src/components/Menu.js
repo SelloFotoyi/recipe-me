@@ -3,8 +3,9 @@ import {useHistory} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import RecipeGrid from './RecipeGrid';
 import Footer from './Footer';
+import Spinner from './Spinner';
 
-const Menu = ({setError}) => {
+const Menu = ({setError, isLoading, setIsLoading}) => {
   const axios = require('axios');
   const [tag, setTag] = useState('');
   const [randomRecipes, setRandomRecipes] = useState([]);
@@ -23,6 +24,7 @@ const Menu = ({setError}) => {
 
   const fetchRandom = (tag) => {
     if (tag) {
+      setIsLoading(true);
       axios
         .get('https://api.spoonacular.com/recipes/random', {
           params: {
@@ -38,6 +40,7 @@ const Menu = ({setError}) => {
           } else {
             setRandomRecipes(res.data.recipes);
           }
+          setIsLoading(false);
         })
         .catch((error) => {
           setError(error.message);
@@ -96,7 +99,7 @@ const Menu = ({setError}) => {
         {tag ? `Random ${tag} recipes` : `Today's random recipes`}
       </h2>
       <main className='menu__grid'>
-        <RecipeGrid recipes={randomRecipes} />
+        {isLoading ? <Spinner /> : <RecipeGrid recipes={randomRecipes} />}
       </main>
       <Footer />
     </div>

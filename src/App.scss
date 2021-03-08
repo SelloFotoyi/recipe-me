@@ -4,6 +4,7 @@ body, html{
   width: 100%;
   height: 100%;
   background-image: $theme_bg-gradient;
+  font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .main-form{
   @extend %search-form-template;
@@ -459,6 +460,14 @@ a{
     }
     
   }
+}
+
+.spinner{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .error{

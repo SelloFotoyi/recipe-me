@@ -128,6 +128,7 @@ body, html {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav-form {
@@ -608,6 +609,14 @@ a {
 
 .explorer .explorer__box div button:active {
   transform: scale(0.9);
+}
+
+.spinner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .error {

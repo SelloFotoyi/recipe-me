@@ -11,6 +11,7 @@ import Menu from './components/Menu';
 import Explore from './components/Explore';
 import ScrollToTop from './components/ScrollToTop';
 import Error from './components/Error';
+import Spinner from './components/Spinner';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -18,10 +19,12 @@ function App() {
   const [navSearch, setNavSearch] = useState(false);
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   let history = useHistory();
 
   useEffect(() => {
     if (query) {
+      setIsLoading(true);
       axios
         .get('https://api.spoonacular.com/recipes/complexSearch?', {
           params: {
@@ -39,6 +42,7 @@ function App() {
             setRecipes(resRecipes);
             history.push('/search-page');
           }
+          setIsLoading(false);
         })
         .catch((error) => {
           setError(error.message);
@@ -61,13 +65,16 @@ function App() {
         exact
         render={(props) => (
           <>
-            {!mobileMenuOpen && (
-              <Home
-                navSearch={navSearch}
-                setNavSearch={setNavSearch}
-                setQuery={setQuery}
-              />
-            )}
+            {!mobileMenuOpen &&
+              (isLoading ? (
+                <Spinner />
+              ) : (
+                <Home
+                  navSearch={navSearch}
+                  setNavSearch={setNavSearch}
+                  setQuery={setQuery}
+                />
+              ))}
           </>
         )}
       />
@@ -80,11 +87,17 @@ function App() {
           recipes={recipes}
           setRecipes={setRecipes}
           setError={setError}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
         />
       </Route>
 
       <Route path='/menu'>
-        <Menu setError={setError} />
+        <Menu
+          setError={setError}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+        />
       </Route>
 
       <Route path='/trivia'>

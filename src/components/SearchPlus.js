@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import Nav from './Nav';
+import Spinner from './Spinner';
 
-const SearchPlus = ({setRecipes, setError}) => {
+const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
   const axios = require('axios');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [ingredient, setIngredient] = useState({
@@ -36,7 +37,11 @@ const SearchPlus = ({setRecipes, setError}) => {
   };
 
   useEffect(() => {
+    if (searchPlus) {
+      setIsLoading(true);
+    }
     if (ingredients.length > 0) {
+      setIsLoading(true);
       let ingredientsParam = '';
       ingredients.map((ingr) => {
         if (ingredientsParam) {
@@ -60,6 +65,7 @@ const SearchPlus = ({setRecipes, setError}) => {
             history.push('/error');
           } else {
             setRecipes(ingredientsResults);
+            setIsLoading(false);
             history.push('/search-page');
           }
         })
@@ -98,50 +104,53 @@ const SearchPlus = ({setRecipes, setError}) => {
           <img src='/img/fridge.jpg' alt='img-2' />
         </div>
       </section>
-      {isModalOpen && (
-        <section className='modal-container' onClick={overlayClose}>
-          <div className='search-plus__pop-up'>
-            <form onSubmit={addIngredient}>
-              <input
-                placeholder='add ingredient...'
-                type='text'
-                value={ingredient.text}
-                onChange={(e) => {
-                  setIngredient({
-                    ...ingredient,
-                    text: e.target.value,
-                  });
-                }}
-                className='search-plus__pop-up__input'
-              />
-              <input type='submit' value='Add' className='btn' />
-            </form>
+      {isModalOpen &&
+        (isLoading ? (
+          <Spinner />
+        ) : (
+          <section className='modal-container' onClick={overlayClose}>
+            <div className='search-plus__pop-up'>
+              <form onSubmit={addIngredient}>
+                <input
+                  placeholder='add ingredient...'
+                  type='text'
+                  value={ingredient.text}
+                  onChange={(e) => {
+                    setIngredient({
+                      ...ingredient,
+                      text: e.target.value,
+                    });
+                  }}
+                  className='search-plus__pop-up__input'
+                />
+                <input type='submit' value='Add' className='btn' />
+              </form>
 
-            {ingredients && (
-              <ul className='ingredients-lister'>
-                {ingredients.map((ingred) => {
-                  return (
-                    <li
-                      key={ingred.id}
-                      onClick={() => {
-                        setIngredients(
-                          ingredients.filter((ing) => ing !== ingred)
-                        );
-                      }}
-                    >
-                      {ingred.text}
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
+              {ingredients && (
+                <ul className='ingredients-lister'>
+                  {ingredients.map((ingred) => {
+                    return (
+                      <li
+                        key={ingred.id}
+                        onClick={() => {
+                          setIngredients(
+                            ingredients.filter((ing) => ing !== ingred)
+                          );
+                        }}
+                      >
+                        {ingred.text}
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
 
-            <button className='btn' onClick={() => setSearchPlus(true)}>
-              Proceed
-            </button>
-          </div>
-        </section>
-      )}
+              <button className='btn' onClick={() => setSearchPlus(true)}>
+                Proceed
+              </button>
+            </div>
+          </section>
+        ))}
     </div>
   );
 };
