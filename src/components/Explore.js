@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faInfoCircle, faLaughBeam} from '@fortawesome/free-solid-svg-icons';
 import randomColor from 'randomcolor';
 
-const Explore = ({query}) => {
+const Explore = ({query, setError}) => {
   const axios = require('axios');
+  const history = useHistory();
   const [next, setNext] = useState(true);
   const [misc, setMisc] = useState('');
   const [themeColor, setThemeColor] = useState(randomColor());
@@ -20,7 +22,8 @@ const Explore = ({query}) => {
         setMisc(res.data.text);
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
+        history.push('/error');
       });
     setThemeColor(randomColor());
   }, [next]);

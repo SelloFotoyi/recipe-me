@@ -2,7 +2,13 @@ import React, {useState} from 'react';
 import SearchForm from './SearchForm';
 import {Link, useLocation} from 'react-router-dom';
 
-const Nav = ({mobileMenuOpen, setMobileMenuOpen, navSearch, setNavSearch}) => {
+const Nav = ({
+  mobileMenuOpen,
+  setMobileMenuOpen,
+  navSearch,
+  setNavSearch,
+  setQuery,
+}) => {
   const location = useLocation();
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -17,7 +23,7 @@ const Nav = ({mobileMenuOpen, setMobileMenuOpen, navSearch, setNavSearch}) => {
         <Link to='/' className='mobile-nav-bar__logo'>
           RM
         </Link>
-        {navSearch && <SearchForm navSearch={navSearch} />}
+        {navSearch && <SearchForm navSearch={navSearch} setQuery={setQuery} />}
 
         <div className='menu-btn ' onClick={toggleMobileMenu}>
           <span

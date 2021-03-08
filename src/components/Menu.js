@@ -1,13 +1,15 @@
 import React, {useEffect, useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import RecipeGrid from './RecipeGrid';
 
 import Footer from './Footer';
 
-const Menu = () => {
+const Menu = ({setError}) => {
   const axios = require('axios');
   const [tag, setTag] = useState('');
   const [randomRecipes, setRandomRecipes] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     fetchRandom('');
@@ -31,10 +33,16 @@ const Menu = () => {
           },
         })
         .then((res) => {
-          setRandomRecipes(res.data.recipes);
+          if (res.data.recipes.length == 0) {
+            setError('');
+            history.push('/error');
+          } else {
+            setRandomRecipes(res.data.recipes);
+          }
         })
         .catch((error) => {
-          console.log(error);
+          setError(error.message);
+          history.push('/error');
         });
     } else {
       axios
@@ -45,10 +53,16 @@ const Menu = () => {
           },
         })
         .then((res) => {
-          setRandomRecipes(res.data.recipes);
+          if (res.data.recipes.length == 0) {
+            setError('');
+            history.push('/error');
+          } else {
+            setRandomRecipes(res.data.recipes);
+          }
         })
         .catch((error) => {
-          console.log(error);
+          setError(error.message);
+          history.push('/error');
         });
     }
   };

@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import RecipeModal from './RecipeModal';
+import Error from './Error';
 
-const RecipeCard = ({recipe}) => {
+const RecipeCard = ({recipe, setError}) => {
   const axios = require('axios');
+  const history = useHistory();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [toModal, setToModal] = useState(false);
@@ -48,6 +51,11 @@ const RecipeCard = ({recipe}) => {
             instructions: instructions,
           });
           setToModal(true);
+        })
+        .catch((error) => {
+          console.log(error.message);
+          //  setError(error.message);
+          history.push('./error');
         });
     }
   }, [isModalOpen]);

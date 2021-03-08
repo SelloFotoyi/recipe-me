@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import Nav from './Nav';
 
-const SearchPlus = ({recipes, setRecipes}) => {
+const SearchPlus = ({setRecipes, setError}) => {
   const axios = require('axios');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [ingredient, setIngredient] = useState({
@@ -25,22 +25,14 @@ const SearchPlus = ({recipes, setRecipes}) => {
     if (!ingredient.live) {
       setIngredients(ingredients.filter((ingred) => !ingred.live));
     }
-
-    //  console.log(ingredients);
   }, [ingredient]);
-
-  const removeIngredient = (id) => {
-    setIngredients(ingredients.filter((ingredient) => ingredient.id !== id));
-  };
 
   const addIngredient = (e) => {
     e.preventDefault();
     if (ingredient.text) {
       setIngredients([...ingredients, ingredient]);
-      console.log(ingredients);
     }
     setIngredient({...ingredient, id: uuidv4(), text: ''});
-    console.log(ingredient);
   };
 
   useEffect(() => {
@@ -53,24 +45,27 @@ const SearchPlus = ({recipes, setRecipes}) => {
           ingredientsParam = ingr.text;
         }
       });
-      console.log(ingredientsParam);
-      console.log(ingredients);
       axios
         .get('https://api.spoonacular.com/recipes/findByIngredients?', {
           params: {
             ingredients: ingredientsParam,
             apiKey: '389912dfeb104476b76c3bcc567edda3',
-            number: 10,
+            number: 50,
           },
         })
         .then((res) => {
           let ingredientsResults = res.data;
-          setRecipes(ingredientsResults);
-
-          history.push('/search-page');
+          if (ingredientsResults.length == 0) {
+            setError('');
+            history.push('/error');
+          } else {
+            setRecipes(ingredientsResults);
+            history.push('/search-page');
+          }
         })
         .catch((error) => {
-          console.log(error);
+          setError(error.message);
+          history.push('./error');
         });
       setIngredients([]);
       setIsModalOpen(false);
@@ -130,7 +125,6 @@ const SearchPlus = ({recipes, setRecipes}) => {
                         setIngredients(
                           ingredients.filter((ing) => ing !== ingred)
                         );
-                        console.log(ingredients.length);
                       }}
                     >
                       {ingred.text}
