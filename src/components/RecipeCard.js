@@ -42,7 +42,7 @@ const RecipeCard = ({recipe, setError}) => {
             id: recipe.id,
             image: info.data.image,
             title: info.data.title,
-            summary: `${info.data.summary}`,
+            summary: info.data.summary,
             diets: info.data.diets,
             servings: info.data.servings,
             calories: info.data.nutrition.nutrients[0].amount,

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {v4 as uuidv4} from 'uuid';
 
 const RecipeModal = ({recipe, isModalOpen, setIsModalOpen, setToModal}) => {
+  const {htmlToText} = require('html-to-text');
   const overlayClose = (e) => {
     if (e.target.classList.contains('modal-container')) {
       setIsModalOpen(false);
@@ -24,10 +25,16 @@ const RecipeModal = ({recipe, isModalOpen, setIsModalOpen, setToModal}) => {
           </span>
         </div>
         <h2>{recipe.title}</h2>
-        <p>{recipe.summary}</p>
-        <p>
+        <p className='recipe-modal__summary'>
+          {htmlToText(recipe.summary, {wordwrap: false})}
+        </p>
+        <p className='recipe-modal__diets'>
           {recipe.diets.length > 0 &&
-            recipe.diets.map((diet) => <span key={uuidv4()}>| {diet} | </span>)}
+            recipe.diets.map((diet) => (
+              <span className='recipe-modal__diets__item' key={uuidv4()}>
+                {diet}{' '}
+              </span>
+            ))}
         </p>
 
         <p>
