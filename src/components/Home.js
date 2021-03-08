@@ -21,7 +21,7 @@ const Home = ({setQuery, navSearch, setNavSearch}) => {
       <section className='home-search'>
         <h1 className='home__title'>Recipe Me!</h1>
         <SearchForm navSearch={navSearch} setQuery={setQuery} />
-        <p className='suggestor'>e.g, pasta, chicken, etc...</p>
+        <p className='home__suggestor'>e.g, pasta, chicken, etc...</p>
       </section>
       <main className='home-main'>
         <h1 className='home-main__title'>Welcome to Recipe Me!</h1>
