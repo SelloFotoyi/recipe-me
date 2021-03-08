@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import RecipeGrid from './RecipeGrid';
-
 import Footer from './Footer';
 
 const Menu = ({setError}) => {
@@ -99,6 +98,7 @@ const Menu = ({setError}) => {
       <main className='menu__grid'>
         <RecipeGrid recipes={randomRecipes} />
       </main>
+      <Footer />
     </div>
   );
 };

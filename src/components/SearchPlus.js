@@ -77,23 +77,25 @@ const SearchPlus = ({setRecipes, setError}) => {
       <section className='main-sub'>
         <div className='main-sub__info'>
           <div className='main-sub__info__title'>
-            <span className='marker'></span>
-            <h3>What's in your fridge?</h3>
+            {/* <span className='marker'></span> */}
+            <h3 style={{width: '100%', textAlign: 'center'}}>
+              What's in your fridge?
+            </h3>
           </div>
           <p>
-            Labore ipsum ullamco aliquip dolor proident eiusmod veniam
-            reprehenderit. Sint aute duis anim sunt labore consectetur ut minim
-            reprehenderit irure. Consequat nostrud veniam velit ipsum est
-            proident quis mollit labore laboris sint. Veniam anim anim enim id
-            non magna labore Lorem ullamco consequat laborum anim magna
-            proident.
+            <i>Recipe Me! Search+</i> feature assists you in narrowing down your
+            search, based on the ingredients you already have. Hit the search
+            button to start entering your ingredients in the pop-up, then the
+            proceed button to search for correponding recipes. Made an error
+            (typo, etc)? click on an ingredient to remove it from the list.
+            How's that for second chances?
           </p>
           <button className='btn' onClick={() => setIsModalOpen(true)}>
             Search
           </button>
         </div>
-        <div className='main-sub__img-div'>
-          <img src='/img/main-sub-img_1.jpg' alt='img-2' />
+        <div className='main-sub__img-div' style={{height: '45vh'}}>
+          <img src='/img/fridge.jpg' alt='img-2' />
         </div>
       </section>
       {isModalOpen && (

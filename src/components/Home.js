@@ -1,6 +1,8 @@
 import React from 'react';
 import Footer from './Footer';
 import SearchForm from './SearchForm';
+import {FontAwesome, FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faGrinTongue} from '@fortawesome/free-regular-svg-icons';
 
 const Home = ({setQuery, navSearch, setNavSearch}) => {
   window.addEventListener('scroll', () => {
@@ -27,15 +29,14 @@ const Home = ({setQuery, navSearch, setNavSearch}) => {
           <div className='main-sub__info'>
             <div className='main-sub__info__title'>
               <span className='marker'></span>
-              <h3>Est incididunt duis ea enim ea.</h3>
+              <h3>Consice recipes</h3>
             </div>
             <p>
-              Labore ipsum ullamco aliquip dolor proident eiusmod veniam
-              reprehenderit. Sint aute duis anim sunt labore consectetur ut
-              minim reprehenderit irure. Consequat nostrud veniam velit ipsum
-              est proident quis mollit labore laboris sint. Veniam anim anim
-              enim id non magna labore Lorem ullamco consequat laborum anim
-              magna proident.
+              Every detail you could ever need to prepare your next meal. The
+              recipes' architecture is natural and logical, making it easy to
+              follow. Just don't forget to compare your end result with the
+              provided recipe image... for the same reason you're probably here
+              in the first place.
             </p>
           </div>
           <div className='main-sub__img-div'>
@@ -46,15 +47,14 @@ const Home = ({setQuery, navSearch, setNavSearch}) => {
           <div className='main-sub__info'>
             <div className='main-sub__info__title'>
               <span className='marker'></span>
-              <h3>Est incididunt duis ea enim ea.</h3>
+              <h3>Search with your ingredients</h3>
             </div>
             <p>
-              Labore ipsum ullamco aliquip dolor proident eiusmod veniam
-              reprehenderit. Sint aute duis anim sunt labore consectetur ut
-              minim reprehenderit irure. Consequat nostrud veniam velit ipsum
-              est proident quis mollit labore laboris sint. Veniam anim anim
-              enim id non magna labore Lorem ullamco consequat laborum anim
-              magna proident.
+              You want to prepare a meal without having to scavenger hunt for
+              all ingredients? <i>Recipe Me!</i> got you. You can search for
+              recipes which iclude what you already have, ingredients-wise. The
+              more ingredients you have, the less you might have to add on to
+              your list...simple math.
             </p>
           </div>
           <div className='main-sub__img-div'>
@@ -65,15 +65,26 @@ const Home = ({setQuery, navSearch, setNavSearch}) => {
           <div className='main-sub__info'>
             <div className='main-sub__info__title'>
               <span className='marker'></span>
-              <h3>Est incididunt duis ea enim ea.</h3>
+              <h3>There's something for everyone!</h3>
             </div>
             <p>
-              Labore ipsum ullamco aliquip dolor proident eiusmod veniam
-              reprehenderit. Sint aute duis anim sunt labore consectetur ut
-              minim reprehenderit irure. Consequat nostrud veniam velit ipsum
-              est proident quis mollit labore laboris sint. Veniam anim anim
-              enim id non magna labore Lorem ullamco consequat laborum anim
-              magna proident.
+              <i>Recipe Me!</i> utilizes a smart{' '}
+              <a
+                href='https://spoonacular.com/food-api/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='footer-flex__item__link'
+                style={{fontWeight: 'bold', textDecoration: 'underline'}}
+              >
+                {' '}
+                Spoonacular food API
+              </a>{' '}
+              which caters for different meal and diet types. Dinner, gluten
+              free, dessert, ketogenic, snacks, lacto-vegetarian, breakfast,
+              pescatarian...the list goes on... and on. The aim is for you to
+              easily find your next meal, without reaching out for your EpiPen.
+              So, please check out recipes' intolerences before you cook up your
+              meal.
             </p>
           </div>
           <div className='main-sub__img-div'>
