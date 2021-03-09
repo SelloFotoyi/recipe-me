@@ -1,5 +1,8 @@
 {
+<<<<<<< HEAD
   "homepage": "https://sellofotoyi-recipe-me.netlify.app/",
+=======
+>>>>>>> 740364c3f8559ebbd807b314a6a18d28bd31a34d
   "name": "recipe-me",
   "version": "0.1.0",
   "private": true,
