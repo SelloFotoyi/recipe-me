@@ -57,7 +57,7 @@
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background-image: linear-gradient(75deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 .home .home-search {
@@ -296,6 +296,7 @@
 }
 
 .recipe-grid {
+  background-image: linear-gradient(75deg, #fdfbfb 0%, #ebedee 100%);
   width: 90%;
   margin: 2.5rem auto 5rem auto;
   overflow-x: hidden;
@@ -417,6 +418,7 @@
   color: white;
   padding: 0.4rem;
   border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .recipe-modal h2 {
@@ -451,6 +453,13 @@
   font-weight: lighter;
 }
 
+.search-page {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-image: linear-gradient(75deg, #fdfbfb 0%, #ebedee 100%);
+}
+
 .search-page__title {
   padding-top: 5rem;
   width: 100%;
@@ -459,7 +468,7 @@
 }
 
 .search-plus {
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background-image: linear-gradient(75deg, #fdfbfb 0%, #ebedee 100%);
   width: 100%;
   margin: auto;
   height: 100vh;
@@ -640,6 +649,66 @@
   text-decoration: underline;
 }
 
+@media screen and (min-width: 360px) {
+  .search-plus__pop-up {
+    height: 80%;
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (min-width: 412px) {
+  .nav-form {
+    width: 65%;
+  }
+  .menu .menu__lister__item {
+    margin: 0.5rem 1rem !important;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 767px) {
+  .home .main-form {
+    width: 60%;
+  }
+  .home .main-form input {
+    font-size: 1.25rem;
+  }
+  .home .main-form label {
+    flex-basis: 7.5%;
+  }
+  .home .nav-form {
+    width: 70%;
+  }
+  .home .nav-form label {
+    flex-basis: 5%;
+  }
+  .home-main .home-main__title {
+    font-size: 2rem;
+  }
+  .main-sub {
+    width: 75%;
+  }
+  .footer .footer-flex {
+    width: 50%;
+    margin: 1rem auto;
+  }
+  .recipe-modal {
+    width: 70%;
+  }
+  .search-plus__pop-up form {
+    width: 50%;
+  }
+  .search-plus__pop-up .search-plus__pop-up__input {
+    width: 100%;
+    font-size: 1.25rem;
+  }
+  .search-plus__pop-up .ingredients-lister {
+    width: 75%;
+  }
+  .menu .menu__header {
+    top: 6rem !important;
+  }
+}
+
 body, html {
   width: 100%;
   height: 10%;
@@ -657,9 +726,11 @@ a {
   overflow-x: hidden;
   padding-top: 2.5rem;
   position: relative;
+  background-image: linear-gradient(75deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 .menu .menu__lister {
+  background-image: linear-gradient(75deg, #fdfbfb 0%, #ebedee 100%);
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -669,7 +740,7 @@ a {
   height: 5rem;
   top: 0;
   left: 0;
-  border-bottom: 1px solid #f1f10c;
+  border-bottom: 1px solid transparent;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -685,11 +756,13 @@ a {
 }
 
 .menu .menu__header {
+  border-bottom: 1px solid #f1f10c;
+  background-image: linear-gradient(75deg, #fdfbfb 0%, #ebedee 100%);
   font-family: Courgette, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
   text-align: center;
   position: fixed;
-  top: 26%;
+  top: 7.8rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
   z-index: 3;
@@ -723,7 +796,7 @@ a {
   font-weight: bold;
   line-height: 1.5;
   font-size: 1.2rem;
-  padding: 1.5rem;
+  padding: 0.5rem;
   margin-bottom: 5rem;
   font-family: Courgette, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

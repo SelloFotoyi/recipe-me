@@ -5,10 +5,6 @@ $theme_primary: #000;
 $theme_secondary: #f1f10c;
 $theme_bg: white;
 $theme_bg-gradient: white;
-//linear-gradient(#fdfbfb, #ebedee);
-@mixin bg-color {
-background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-}
 
 
 * {
@@ -18,6 +14,9 @@ background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@mixin bg-color {
+background-image: linear-gradient(75deg, #fdfbfb 0%, #ebedee 100%);
+}
 @mixin transition-ease {
   transition: all 0.5s ease-in-out;
 }
@@ -61,4 +60,49 @@ background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
             }
         }
     }
+}
+
+$mobile-m: 360px;
+$mobile-l: 412px;
+$mobile-xl: 767px;
+$tablet: 768px;
+$desktop__sm: 1024px;
+$desktop__m: 1280px;
+$desktop__l: 1920px;
+
+@mixin media-mobile-m {
+  @media screen and (min-width: $mobile-m) {
+    @content;
+  }
+}
+@mixin media-mobile-l {
+  @media screen and (min-width: $mobile-l) {
+    @content;
+  }
+}
+@mixin media-mobile-xl {
+  @media screen and (min-width: 550px) and (max-width: $mobile-xl) {
+    @content;
+  }
+}
+@mixin media-tablet {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
+}
+@mixin media-desktop__sm {
+  @media screen and (min-width: $desktop__sm) {
+    @content;
+  }
+}
+@mixin media-desktop__m {
+  @media screen and (min-width: $desktop__m) {
+    @content;
+  }
+}
+
+@mixin media-desktop__l {
+  @media screen and (min-width: $desktop__l) {
+    @content;
+  }
 }

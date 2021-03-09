@@ -60,6 +60,7 @@ function App() {
         setMobileMenuOpen={setMobileMenuOpen}
         navSearch={navSearch}
         setNavSearch={setNavSearch}
+        setQuery={setQuery}
       />
       <Route
         path='/'
@@ -102,11 +103,21 @@ function App() {
       </Route>
 
       <Route path='/trivia'>
-        <Explore query='trivia' setError={setError} />
+        <Explore
+          query='trivia'
+          setError={setError}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+        />
       </Route>
 
       <Route path='/jokes'>
-        <Explore query='jokes' setError={setError} />
+        <Explore
+          query='jokes'
+          setError={setError}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+        />
       </Route>
 
       <Route path='/error'>

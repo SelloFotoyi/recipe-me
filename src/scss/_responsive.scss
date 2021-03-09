@@ -1,0 +1,78 @@
+
+
+
+@include media-mobile-m{
+  .search-plus__pop-up{
+    height: 80%;
+    margin-top: 3rem;
+  }
+}
+@include media-mobile-l {
+  .nav-form{
+    width: 65%;
+  }
+  .menu{
+      #{&}__lister{
+          &__item{
+            margin: 0.5rem 1rem !important;
+        }
+      }
+  }
+  
+}
+
+@include media-mobile-xl {
+    .home{
+        .main-form{
+            width: 60%;
+            input{
+                font-size: 1.25rem;
+            }
+            label{
+                flex-basis: 7.5%;
+            }
+        }
+        .nav-form{
+            width: 70%;
+            label{
+                flex-basis: 5%;
+            }
+        }
+    }
+    .home-main{
+        #{&}__title{
+            font-size: 2rem;
+        }
+    }
+    .main-sub{
+        width: 75%;
+    }
+    .footer{
+        #{&}-flex{
+            width: 50%;
+            margin: 1rem auto;
+        }
+    }
+    .recipe-modal{
+        width: 70%;
+    }
+    .search-plus__pop-up{
+        form{
+            width: 50%;
+        }
+        #{&}__input{
+            width: 100%;
+            font-size: 1.25rem;
+        }
+        .ingredients-lister{
+            width: 75%;
+        }
+    }
+    .menu{
+        #{&}__header{
+            top: 6rem !important;
+        }
+    }
+}
+
+

@@ -4,7 +4,7 @@ import React from 'react';
 
 const Error = ({error}) => {
   return (
-    <div>
+    <div className='error'>
       {error == 'Network Error' ? (
         error == 'Request failed with status code 402' ? (
           <h2 className='error__spec'>

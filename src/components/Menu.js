@@ -36,7 +36,7 @@ const Menu = ({setError, isLoading, setIsLoading}) => {
         .then((res) => {
           if (res.data.recipes.length == 0) {
             setError('');
-            // history.push('/error');
+            history.push('/error');
           } else {
             setRandomRecipes(res.data.recipes);
           }
@@ -44,7 +44,7 @@ const Menu = ({setError, isLoading, setIsLoading}) => {
         })
         .catch((error) => {
           setError(error.message);
-          // history.push('/error');
+          history.push('/error');
         });
     } else {
       axios
@@ -57,14 +57,14 @@ const Menu = ({setError, isLoading, setIsLoading}) => {
         .then((res) => {
           if (res.data.recipes.length == 0) {
             setError('');
-            //history.push('/error');
+            history.push('/error');
           } else {
             setRandomRecipes(res.data.recipes);
           }
         })
         .catch((error) => {
           setError(error.message);
-          // history.push('/error');
+          history.push('/error');
         });
     }
   };
