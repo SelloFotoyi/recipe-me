@@ -1,9 +1,3 @@
-.main-form{
-  @extend %search-form-template;
-  label{
-      flex-basis: 10%;
-  }
-}
 .nav-form{
   @include transition-ease;
   @extend %search-form-template;

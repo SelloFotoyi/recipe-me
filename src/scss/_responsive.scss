@@ -75,4 +75,150 @@
     }
 }
 
+ @include media-tablet {
+    .mobile-nav-bar {
+        height: 4rem;
+        justify-content: flex-start;
+    }
+    .menu-btn {
+        top: 45%;
+        &__burger {
+            height: 0.2rem;
+            &::before {
+                height: inherit;
+            }
+            &::after {
+                height: inherit;
+            }
+        }
+    }
+    .nav{
+        #{&}__menu{
+            line-height: 2.5;
+            &__item{
+                &__link{
+                    font-size: 3.5rem;
+                }
+            }
+        }
+    }
+
+    .home{
+        #{&}__title{
+            font-size: 3.5rem;
+        }
+        #{&}__suggestor{
+            font-size: 1.25rem;
+        }
+
+    }
+    .nav-form{
+        height: 75%;
+        input{
+            font-size: 1.5rem;
+        }
+        label{
+            flex-basis: 5%;
+        }
+    }
+    .main-form{
+        width: 65%;
+        height: 3.5rem;
+        border-radius: 1rem;
+        input{
+            font-size: 1.75rem;
+        }
+        label{
+            flex-basis: 6%;
+        }
+    }
+
+    .home-main{
+         #{&}__title{
+             font-size: 2.5rem;
+             margin-bottom: 2rem;
+         }
+    }
+
+    .main-sub{
+        flex-direction: row;
+        #{&}__info{
+            flex-basis: 50%;
+            padding: 1rem;
+            &__title{
+                h3{
+                    font-size: 1.25rem;
+                    text-align: left;
+                }
+            }
+        }
+        #{&}__img-div{
+            flex-basis: 50%;
+        }
+        &:nth-child(3){
+            div:last-child{
+                order: -1;
+            }
+        }
+    }
+
+    .search-page__title{
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+    .menu{
+         #{&}__lister{
+             padding-top: 5rem;
+             top: 1rem !important;
+             &__item{
+                 font-size: 1.5rem;
+             }
+         }
+         #{&}__header{
+             top: 8rem !important;
+             font-size: 2rem;
+         }
+    }
+
+    .recipe-modal{
+        width: 95%;
+        height: 90%;
+        margin-top: 5rem;
+    }
+
+    .search-plus{
+         padding-top: 15%;
+    }
+    .main-sub.searc-plus{
+        width: 85%;
+        flex-direction: column;
+    }
+
+    .search-plus__pop-up{
+        height: 50%;
+        margin-top: 25%;
+        #{&}__input{
+            height: 2rem;
+            font-size: 1.25rem;
+        }
+        form{
+            width: 60%;
+        }
+    }
+    .footer{
+        height: 15rem;
+        padding-top: 2rem;
+        #{&}-flex{
+            width: 50%;
+            &__item{
+                 font-size: 1.1rem;
+            }
+            span{
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+}
+
 

@@ -37,7 +37,12 @@
         font-family: Courgette, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 }
-
+.main-form{
+  @extend %search-form-template;
+  label{
+      flex-basis: 10%;
+  }
+}
 .main-sub{
     width: 95%;
     margin:0 auto;
@@ -46,7 +51,7 @@
     #{&}__info{
         margin: 2.5rem auto 1rem auto;
         font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: lighter;
+        font-weight: normal;
         &__title{
             width: 100%;
             margin: 0 auto 0.5rem auto;

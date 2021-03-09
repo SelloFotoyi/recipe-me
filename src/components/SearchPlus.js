@@ -19,7 +19,6 @@ const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
   const overlayClose = (e) => {
     if (e.target.classList.contains('modal-container')) {
       setIsModalOpen(false);
-      setIngredients([]);
     }
   };
 
@@ -84,7 +83,7 @@ const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
 
   return (
     <div className='search-plus'>
-      <section className='main-sub'>
+      <section className='main-sub searc-plus'>
         <div className='main-sub__info'>
           <div className='main-sub__info__title'>
             <h3 style={{width: '100%', textAlign: 'center'}}>
