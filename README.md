@@ -1,5 +1,5 @@
 # Recipe Me!
-demo: [demo](https://sellofotoyi-recipe-me.netlify.app)
+[demo](https://sellofotoyi-recipe-me.netlify.app)
 
 ## An API-consuming recipes-rendering React application
 
