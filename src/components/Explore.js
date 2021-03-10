@@ -17,7 +17,7 @@ const Explore = ({query, setError, isLoading, setIsLoading}) => {
     axios
       .get(`https://api.spoonacular.com/food/${query}/random`, {
         params: {
-          apiKey: '389912dfeb104476b76c3bcc567edda3',
+          apiKey: process.env.REACT_APP_API_KEY,
         },
       })
       .then((res) => {

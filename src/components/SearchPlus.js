@@ -56,7 +56,7 @@ const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
         .get('https://api.spoonacular.com/recipes/findByIngredients?', {
           params: {
             ingredients: ingredientsParam,
-            apiKey: '389912dfeb104476b76c3bcc567edda3',
+            apiKey: process.env.REACT_APP_API_KEY,
             number: 50,
           },
         })

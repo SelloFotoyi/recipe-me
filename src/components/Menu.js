@@ -30,7 +30,7 @@ const Menu = ({setError, isLoading, setIsLoading}) => {
         .get('https://api.spoonacular.com/recipes/random', {
           params: {
             tags: tag,
-            apiKey: '389912dfeb104476b76c3bcc567edda3',
+            apiKey: process.env.REACT_APP_API_KEY,
             number: 20,
           },
         })
@@ -51,7 +51,7 @@ const Menu = ({setError, isLoading, setIsLoading}) => {
       axios
         .get('https://api.spoonacular.com/recipes/random', {
           params: {
-            apiKey: '389912dfeb104476b76c3bcc567edda3',
+            apiKey: process.env.REACT_APP_API_KEY,
             number: 20,
           },
         })

@@ -33,7 +33,7 @@ function App() {
         .get('https://api.spoonacular.com/recipes/complexSearch?', {
           params: {
             query: query,
-            apiKey: '389912dfeb104476b76c3bcc567edda3',
+            apiKey: process.env.REACT_APP_API_KEY,
             number: 50,
           },
         })
