@@ -23,6 +23,10 @@ function App() {
   let history = useHistory();
 
   useEffect(() => {
+    document.title = 'Home | Recipe Me!';
+  }, []);
+
+  useEffect(() => {
     if (query) {
       setIsLoading(true);
       axios

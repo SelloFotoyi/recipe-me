@@ -16,18 +16,20 @@ const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
   const [searchPlus, setSearchPlus] = useState(false);
   let history = useHistory();
 
-  const overlayClose = (e) => {
-    if (e.target.classList.contains('modal-container')) {
-      setIsModalOpen(false);
-    }
-  };
-
+  useEffect(() => {
+    document.title = 'Search+ | Recipe Me!';
+  }, []);
   useEffect(() => {
     if (!ingredient.live) {
       setIngredients(ingredients.filter((ingred) => !ingred.live));
     }
   }, [ingredient]);
 
+  const overlayClose = (e) => {
+    if (e.target.classList.contains('modal-container')) {
+      setIsModalOpen(false);
+    }
+  };
   const addIngredient = (e) => {
     e.preventDefault();
     if (ingredient.text) {
@@ -72,7 +74,6 @@ const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
         })
         .catch((error) => {
           setError(error.message);
-          console.log(error.message);
           setIsLoading(false);
           history.push('./error');
         });

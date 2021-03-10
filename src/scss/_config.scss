@@ -68,7 +68,7 @@ $mobile-xl: 767px;
 $tablet: 768px;
 $desktop__sm: 1024px;
 $desktop__m: 1280px;
-$desktop__l: 1920px;
+$desktop__l: 1440px;
 
 @mixin media-mobile-m {
   @media screen and (min-width: $mobile-m) {

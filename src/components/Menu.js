@@ -12,6 +12,7 @@ const Menu = ({setError, isLoading, setIsLoading}) => {
   const history = useHistory();
 
   useEffect(() => {
+    document.title = 'Menu | Recipe Me!';
     fetchRandom('');
   }, []);
 

@@ -57,13 +57,14 @@
   padding: 0.5rem;
   border-radius: 1rem;
   cursor: pointer;
+  font-weight: bold;
 
   &:hover{
     @include transition-ease;
     outline: none ;
     background-color:darken($theme_secondary, 15%);
     color: $theme_bg;
-    font-weight: bold;
+  
   }
 }
 

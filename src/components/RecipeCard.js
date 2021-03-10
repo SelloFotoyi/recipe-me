@@ -53,8 +53,7 @@ const RecipeCard = ({recipe, setError}) => {
           setToModal(true);
         })
         .catch((error) => {
-          console.log(error.message);
-          //  setError(error.message);
+          setError(error.message);
           history.push('./error');
         });
     }

@@ -39,13 +39,13 @@ const SearchForm = ({navSearch, setQuery}) => {
             />
           </svg>
         </label>
+        <input
+          style={{display: 'none'}}
+          type='submit'
+          name='submit'
+          id='search-input'
+        />
       </form>
-      <input
-        style={{display: 'none'}}
-        type='submit'
-        name='submit'
-        id='search-input'
-      />
     </>
   );
 };

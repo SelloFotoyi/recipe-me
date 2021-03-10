@@ -516,6 +516,7 @@
   padding: 0.5rem;
   border-radius: 1rem;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .btn:hover {
@@ -523,7 +524,6 @@
   outline: none;
   background-color: #a8a808;
   color: white;
-  font-weight: bold;
 }
 
 .ingredients-lister {
@@ -924,6 +924,9 @@
     margin-top: 3rem;
     height: 100%;
   }
+  .menu .menu__lister__item {
+    font-size: 1rem;
+  }
   .footer .footer-flex {
     width: 35%;
   }
@@ -962,6 +965,28 @@
   }
   .search-plus__pop-up .search-plus__pop-up__input {
     font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-form input {
+    font-size: 1.75rem;
+  }
+  .nav-form input {
+    font-size: 1.5rem;
+  }
+  .recipe-grid {
+    width: 85%;
+  }
+  .search-plus {
+    padding-top: 15rem;
+  }
+  .main-sub.search-plus {
+    transform: scale(1.2);
+    width: 90%;
+  }
+  .btn {
+    font-size: 1.2rem;
   }
 }
 

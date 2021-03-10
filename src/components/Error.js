@@ -1,8 +1,11 @@
 import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const Error = ({error}) => {
+  useEffect(() => {
+    document.title = 'Error | Recipe Me!';
+  }, []);
   return (
     <div className='error'>
       {error == 'Network Error' ? (

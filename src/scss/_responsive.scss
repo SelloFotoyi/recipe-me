@@ -320,6 +320,13 @@
             height: 100%;
         }
     }
+    .menu{
+        #{&}__lister{
+            &__item{
+                font-size: 1rem;
+            }
+        }
+    }
      .footer{   
         #{&}-flex{
         width: 35%;
@@ -368,6 +375,35 @@
         #{&}__input{
             font-size: 1rem;
         }
+    }
+
+}
+
+@include media-desktop__l {
+
+    .main-form{
+        input{
+            font-size: 1.75rem;
+        }
+    }
+    .nav-form{
+        input{
+            font-size: 1.5rem;
+        }
+    }
+
+    .recipe-grid{
+        width: 85%;
+    }
+    .search-plus{
+        padding-top: 15rem;
+    }
+    .main-sub.search-plus{
+      transform: scale(1.2);
+      width: 90%;
+    }
+    .btn{
+        font-size: 1.2rem;
     }
 
 }

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import RecipeGrid from './RecipeGrid';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
 
 const SearchPage = ({recipes, setError, isLoading}) => {
+  useEffect(() => {
+    document.title = 'Search result | Recipe Me!';
+  }, []);
   return (
     <div className='search-page'>
       <ScrollToTop />

@@ -20,9 +20,9 @@ const Nav = ({
   return (
     <>
       <div className='mobile-nav-bar home'>
-        <Link to='/' className='mobile-nav-bar__logo'>
+        <a href='/' className='mobile-nav-bar__logo'>
           RM
-        </Link>
+        </a>
         {navSearch && <SearchForm navSearch={navSearch} setQuery={setQuery} />}
 
         <div className='menu-btn ' onClick={toggleMobileMenu}>
@@ -35,22 +35,22 @@ const Nav = ({
       <nav className={`nav ${mobileMenuOpen ? 'open' : ''}`}>
         <ul className='nav__menu'>
           <li className={`nav__menu__item`} onClick={toggleMobileMenu}>
-            <Link to='/' className='nav__menu__item__link logo'>
+            <a href='/' className='nav__menu__item__link logo'>
               RM
-            </Link>
+            </a>
           </li>
           {navSearch && (
             <SearchForm navSearch={navSearch} setQuery={setQuery} />
           )}
           <li className={`nav__menu__item `} onClick={toggleMobileMenu}>
-            <Link
-              to='/'
+            <a
+              href='/'
               className={`nav__menu__item__link ${
                 location.pathname === '/' ? 'active' : ''
               }`}
             >
               Home
-            </Link>
+            </a>
           </li>
           <li className='nav__menu__item' onClick={toggleMobileMenu}>
             <Link
