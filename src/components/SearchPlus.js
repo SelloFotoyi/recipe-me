@@ -83,7 +83,7 @@ const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
 
   return (
     <div className='search-plus'>
-      <section className='main-sub searc-plus'>
+      <section className='main-sub search-plus'>
         <div className='main-sub__info'>
           <div className='main-sub__info__title'>
             <h3 style={{width: '100%', textAlign: 'center'}}>

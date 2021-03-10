@@ -39,6 +39,9 @@ const Nav = ({
               RM
             </Link>
           </li>
+          {navSearch && (
+            <SearchForm navSearch={navSearch} setQuery={setQuery} />
+          )}
           <li className={`nav__menu__item `} onClick={toggleMobileMenu}>
             <Link
               to='/'

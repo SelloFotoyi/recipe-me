@@ -189,7 +189,7 @@
     .search-plus{
          padding-top: 15%;
     }
-    .main-sub.searc-plus{
+    .main-sub.search-plus{
         width: 85%;
         flex-direction: column;
     }
@@ -222,3 +222,92 @@
 }
 
 
+@include media-desktop__sm {
+    .mobile-nav-bar {
+        display: none;
+    }
+    .nav{
+        @include bg-color;
+        border-bottom: 2px solid $theme_secondary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+        transform: translateY(0);
+        #{&}__menu {
+            margin-top: 0;
+            margin: 0 1rem;
+            padding-top: 0;
+            padding-bottom: 1rem;
+            position: static;
+            flex-direction: row;
+             justify-content: flex-end;
+            &__item{
+                margin-top: 0;
+                 padding-top: 0;
+                     &:nth-child(1){
+                         color: blue;
+                     }
+                &__link{
+                    font-size: 1.2rem;
+                    margin:0 1rem;
+                     padding-top: 0;
+
+                    &.logo{
+                        position: absolute;
+                        left: 1rem;
+                        top: 0.5rem;
+                        display: block;
+                        font-size: 1.2rem;
+                        font-family:Courgette, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+
+            }
+        }
+    }
+ }
+ .nav-form{
+      width: 60%;
+      margin-top: 1rem;
+      margin-left: 6rem;
+      height:2.5rem;
+      label{
+          flex-basis: 4%;
+      }
+      input{
+          padding-bottom: 0.5rem;
+      }
+ }
+    .recipe-modal{
+        width: 70%;
+    }
+     .search-plus{
+         height: 100vh;
+         padding: 2rem 5rem 0 5rem;
+    }
+    .main-sub.search-plus{
+        height: 85vh;
+        padding-top: 0;
+        margin-top: 2.5rem;
+        width: 80%;
+        overflow-y: hidden;
+    }
+    .search-plus__pop-up{
+        margin-top: 5rem;
+        height: 70%;
+        width: 40%;
+        padding-top: 2.5rem;
+    }
+
+    .explorer{
+        #{&}__box{
+            width: 50% !important;
+        }
+    }
+     .footer{   
+        #{&}-flex{
+        width: 35%;
+    }
+ }
+
+}
