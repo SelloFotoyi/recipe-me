@@ -2,7 +2,7 @@
 [demo](https://sellofotoyi-recipe-me.netlify.app)
 
 ### `Description`
-This is a react application which makes use of [Spoonacular food API](https://spoonacular.com/food-api/) (via GET HTTP requests) to render recipes, as per user's requests.\
+This is a react application which makes use of [Spoonacular food API](https://spoonacular.com/food-api/) (via HTTP GET requests) to render recipes, as per user's requests.
 
 ### `Features`
 - Home and Result pages: Retrieves recipes matching user's query via a search bar if available, else render an error component.
@@ -11,4 +11,5 @@ This is a react application which makes use of [Spoonacular food API](https://sp
 - Renders a corresponding recipe modal when a user clicks a recipe card.
 
 ### `Trade-offs`
-- No auto-complete: This is because the API key used is limited. This feature would result in a rather quicker depletion rate
+- No auto-complete: This is because the API key used is limited. This feature would result in a rather quicker depletion rate of daily requests allocated for the key
+- Search suggestions: For the same reason as above 
