@@ -84,8 +84,8 @@ const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
   return (
     <div className='search-plus'>
       <section className='main-sub search-plus'>
-        <div className='main-sub__info'>
-          <div className='main-sub__info__title'>
+        <div className='main-sub__info info'>
+          <div className='main-sub__info__title title'>
             <h3 style={{width: '100%', textAlign: 'center'}}>
               What's in your fridge?
             </h3>
@@ -102,7 +102,7 @@ const SearchPlus = ({setRecipes, setError, isLoading, setIsLoading}) => {
             Search
           </button>
         </div>
-        <div className='main-sub__img-div' style={{height: '45vh'}}>
+        <div className='main-sub__img-div img-div' style={{height: '45vh'}}>
           <img src='/img/fridge.jpg' alt='img-2' />
         </div>
       </section>

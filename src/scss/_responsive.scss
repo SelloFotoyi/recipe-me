@@ -304,10 +304,70 @@
             width: 50% !important;
         }
     }
+
+    .main-sub.search-plus{
+        flex-direction: row;
+        justify-content: center;
+        height: 25rem;
+        margin-top: 5rem;
+        width: 100%;
+        .info{
+            padding: 2rem 0 0 0;
+            margin-right: 1.5rem;
+        }
+        .img-div{
+            margin-top: 3rem;
+            height: 100%;
+        }
+    }
      .footer{   
         #{&}-flex{
         width: 35%;
     }
  }
+
+}
+
+@include media-desktop__m {
+    .home{
+        #{&}-search{
+            background: url('../../src/img/splash-img-3.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+    }
+    .main-form{
+        width: 40%;
+        height: 3rem;
+        input{
+            font-size: 1.25rem;
+        }
+        label{
+            flex-basis: 5%;
+        }
+    }
+    .nav-form{
+        input{
+            font-size: 1.25rem;
+        }
+        label{
+            flex-basis: 3%;
+        }
+    }
+    .main-sub{
+        height: 20rem;
+        #{&}__info{
+            padding: 2.5rem 5rem;
+        }
+    }
+    .recipe-modal{
+        width: 50%;
+    }
+    .search-plus__pop-up{
+        #{&}__input{
+            font-size: 1rem;
+        }
+    }
 
 }
