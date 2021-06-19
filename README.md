@@ -1,5 +1,5 @@
 # Recipe Me!
-[demo](https://sellofotoyi-recipe-me.netlify.app)
+[demo](https://sellofotoyi-recipe.netlify.app)
 
 ### `Description`
 This is a react application which makes use of [Spoonacular food API](https://spoonacular.com/food-api/) (via HTTP GET requests) to render recipes, as per user's requests.
